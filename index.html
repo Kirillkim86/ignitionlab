@@ -11,7 +11,8 @@
 <meta property="og:title" content="IGNITION LAB — Адаптация продуктов, монетизация, проверка идей">
 <meta property="og:description" content="Адаптирую продукты под рынок РФ, монетизирую клиентские базы и проверяю идеи на реальных людях. Превращаю данные в выручку.">
 <meta property="og:locale" content="ru_RU">
-    <!-- Yandex.Metrika counter -->
+    
+<!-- Yandex.Metrika counter -->
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){
         m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -24,6 +25,7 @@
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/113706062" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -54,6 +56,7 @@ a{color:inherit;text-decoration:none}
 .nav{display:flex;gap:32px;margin-left:auto}
 .nav a{font-size:14px;color:var(--text-dim);transition:color .2s;padding:8px 0}
 .nav a:hover{color:var(--text)}
+.nav a.highlight{color:var(--accent);font-weight:600}
 .header-actions{display:flex;align-items:center;gap:12px;flex-shrink:0}
 .header-cta{background:var(--accent);color:#060912;padding:10px 20px;border-radius:8px;font-weight:600;font-size:14px;white-space:nowrap;transition:transform .2s;min-height:40px;display:inline-flex;align-items:center}
 .header-cta:hover{transform:translateY(-1px)}
@@ -67,8 +70,8 @@ a{color:inherit;text-decoration:none}
 .mobile-nav[hidden]{display:none}
 .mobile-nav a{padding:14px 0;font-size:15px;color:var(--text-dim);border-bottom:1px solid var(--border)}
 .mobile-nav a:last-of-type{border-bottom:0}
+.mobile-nav a.highlight{color:var(--accent);font-weight:600}
 
-/* ИСПРАВЛЕНИЕ 1: Скрываем кнопку "Обсудить" на мобильных */
 @media(max-width:900px){
   .nav{display:none}
   .burger{display:flex}
@@ -76,7 +79,6 @@ a{color:inherit;text-decoration:none}
 }
 @media(min-width:901px){.mobile-nav{display:none !important}}
 
-/* Выровненные кнопки */
 .btn-primary,.btn-secondary{
   display:inline-flex;
   align-items:center;
@@ -106,7 +108,6 @@ a{color:inherit;text-decoration:none}
 .hero-stat-num{font-family:'Space Grotesk',sans-serif;font-size:clamp(32px,4vw,48px);font-weight:700;color:var(--accent);margin-bottom:8px}
 .hero-stat-label{font-size:14px;color:var(--text-dim)}
 
-/* ИСПРАВЛЕНИЕ 2: Выравниваем карточки "Шагов" */
 .system-card{background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius);padding:36px 32px;display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;overflow:hidden}
 .system-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),transparent)}
 .system-num{font-family:'Space Grotesk',sans-serif;font-size:13px;color:var(--accent);font-weight:600;letter-spacing:.12em;margin-bottom:16px}
@@ -164,13 +165,6 @@ a{color:inherit;text-decoration:none}
 .tariff-desc{font-size:14px;color:var(--text-dim);margin-bottom:24px;line-height:1.6;flex-grow:1}
 .tariff-cta{display:flex;text-align:center;align-items:center;justify-content:center;padding:14px;background:rgba(0,229,160,.1);border:1px solid rgba(0,229,160,.3);border-radius:8px;color:var(--accent);font-weight:600;font-size:14px;transition:all .2s;margin-top:auto;min-height:48px;box-sizing:border-box}
 .tariff-cta:hover{background:var(--accent);color:#060912}
-
-.retainer-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:32px 28px}
-.retainer-card.featured{border-color:var(--accent)}
-.retainer-name{font-size:18px;font-weight:600;margin-bottom:8px}
-.retainer-price{font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--accent);margin-bottom:14px}
-.retainer-desc{font-size:14px;color:var(--text-dim)}
-.retainer-note{margin-top:40px;text-align:center}
 
 .expertise{background:var(--bg-2)}
 .timeline{position:relative;padding-left:32px}
@@ -277,6 +271,7 @@ a{color:inherit;text-decoration:none}
     <nav class="nav">
       <a href="#products">Продукты</a>
       <a href="#tariffs">Тарифы</a>
+      <a href="subscription.html" class="highlight">Подписка (CPO)</a>
       <a href="#expertise">Экспертиза</a>
     </nav>
 
@@ -292,6 +287,7 @@ a{color:inherit;text-decoration:none}
   <nav class="mobile-nav" id="mobileNav" hidden>
     <a href="#products">Продукты</a>
     <a href="#tariffs">Тарифы</a>
+    <a href="subscription.html" class="highlight">Подписка (CPO)</a>
     <a href="#expertise">Экспертиза</a>
     <a href="#contact">Обсудить проект →</a>
   </nav>
@@ -617,36 +613,18 @@ a{color:inherit;text-decoration:none}
   </div>
 </section>
 
+<!-- НОВЫЙ БЛОК: Баннер-тизер на подписку -->
 <section class="section" style="background:var(--bg-2)">
   <div class="container">
-    <div class="sec-head">
-      <div class="sec-eyebrow">Сопровождение (ретейнер)</div>
-      <h2 class="sec-title">Для клиентов, которые уже прошли основной проект</h2>
-      <p class="sec-desc">И хотят продолжать расти на данных.</p>
-    </div>
-
-    <div class="grid-3">
-      <div class="retainer-card">
-        <div class="retainer-name">Базовый</div>
-        <div class="retainer-price">30 000 ₽/мес</div>
-        <div class="retainer-desc">Ежемесячный дашборд + 1 созвон + рекомендации</div>
+    <div class="limit-block" style="text-align: left; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 32px; padding: 48px;">
+      <div style="max-width: 600px;">
+        <div class="sec-eyebrow" style="margin-bottom: 8px;">Долгосрочное партнёрство</div>
+        <h2 class="limit-title" style="margin-bottom: 16px;">Нужен постоянный продуктовый партнёр?</h2>
+        <p class="limit-desc" style="margin: 0; font-size: 16px;">Не разовый проект, а ежемесячное управление продуктовой функцией (Fractional CPO). Контроль метрик, A/B-тесты, стратегические сессии и рост вашей выручки.</p>
       </div>
-
-      <div class="retainer-card featured">
-        <div class="retainer-name">Оптимальный</div>
-        <div class="retainer-price">60 000 ₽/мес</div>
-        <div class="retainer-desc">Дашборд + 2 созвона + эксперименты + корректировка цен</div>
+      <div>
+        <a href="subscription.html" class="btn-primary">Смотреть тарифы подписки →</a>
       </div>
-
-      <div class="retainer-card">
-        <div class="retainer-name">Партнёрский</div>
-        <div class="retainer-price">от 100 000 ₽/мес</div>
-        <div class="retainer-desc">Полное сопровождение: аналитика, эксперименты, стратегические сессии</div>
-      </div>
-    </div>
-
-    <div class="retainer-note">
-      <a href="#contact" class="btn-primary">Обсудить проект</a>
     </div>
   </div>
 </section>
@@ -809,6 +787,7 @@ a{color:inherit;text-decoration:none}
         <a href="#cases">Результаты</a>
         <a href="#products">Продукты</a>
         <a href="#tariffs">Тарифы</a>
+        <a href="subscription.html">Подписка (CPO)</a>
         <a href="#expertise">Экспертиза</a>
       </div>
       <div class="footer-col">
