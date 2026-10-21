@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kirillkim86.github.io/ignitionlab/sitemap.xml
